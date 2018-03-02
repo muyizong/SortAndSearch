@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Sort {
+
+	public static void main(String[] args) {
+		
+		int[] number = {70, 80, 31, 37, 10, 1, 48, 60, 33};
+		display(number);
+		sort(number);
+		display(number);
+	}
+	
+	static int[] sort(int[] number) {
+		
+		int temp;
+		
+		for( int j = 0; j < number.length-1; j ++) {
+			for( int i = 0; i < number.length-1; i++) {
+				 if(number[i] > number[i+1]) {
+					 temp = number[i];
+					 number[i] = number[i+1];
+					 number[i+1] = temp;
+				 }
+			}
+		}
+		return number;
+	}
+	
+	static void display(int[] number) {
+		for (int i:number) {
+			System.out.print(i + " ");
+		}
+		System.out.println();
+	}
+}
